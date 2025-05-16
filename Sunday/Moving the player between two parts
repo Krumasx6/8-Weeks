@@ -1,0 +1,16 @@
+PartScript:
+
+local pos1 = script.Parent
+local pos2 = workspace:WaitForChild("Pos2")
+
+local firstPad = pos1.Position
+local secondPad = pos2.Position
+
+local function teleporterPad(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		hum:MoveTo(secondPad)
+	end
+end
+
+pos1.Touched:Connect(teleporterPad)
