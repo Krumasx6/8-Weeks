@@ -1,0 +1,5 @@
+PartScript:
+game:GetService("RunService").Heartbeat:Connect(function()
+	local part = script.Parent
+	part.Orientation = Vector3.new(0, part.Orientation.Y + 5, 0)
+end)
