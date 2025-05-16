@@ -1,0 +1,16 @@
+ServerScript>Script:
+
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder", player)
+	leaderstats.Name = "leaderstats"
+	
+	local time = Instance.new("IntValue", leaderstats)
+	time.Value= 0
+	time.Name = "Time"
+	
+	while true do
+		time.Value = time.Value + 1
+		task.wait(1)
+	end
+	
+end)
