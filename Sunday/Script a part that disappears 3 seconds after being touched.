@@ -1,0 +1,8 @@
+script.Parent.Touched:Connect(function(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		script.Parent.Transparency = 1
+		wait(3)
+		script.Parent.Transparency = 0
+	end
+end)
