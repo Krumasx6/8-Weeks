@@ -1,0 +1,20 @@
+Part>Script:
+
+local part = script.Parent
+local door = workspace:WaitForChild("Door")
+local open = false
+
+part.ClickDetector.MouseClick:Connect(function()
+	if part.Color == Color3.new(0,1,0) then
+		open = true
+		door.Transparency = 1
+		door.CanCollide = false
+		part.Color = Color3.new(1,0,0)
+	elseif part.Color == Color3.new(1,0,0) then
+		open = false
+		door.Transparency = 0
+		door.CanCollide = true
+		part.Color = Color3.new(0,1,0)
+	end
+
+end)
