@@ -1,0 +1,16 @@
+local TweenService = game:GetService("TweenService")
+local part = script.Parent
+local destination = workspace:FindFirstChild("Destination")
+
+local goal = {Position = destination.Position}
+
+local tweenInfo = TweenInfo.new(
+	1,
+	Enum.EasingStyle.Linear,
+	Enum.EasingDirection.In,
+	-1,
+	true,
+	0
+)
+local tween = TweenService:Create(part, tweenInfo, goal)
+tween:Play()
