@@ -1,0 +1,14 @@
+PartScript
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+local sound = script.Parent.Sound
+local part = script.Parent
+
+local function dangerZone(otherPart)
+	local player = otherPart.Parent:FindFirstChild("Humanoid")
+	if player then
+		sound:Play()
+	end
+end
+
+part.Touched:Connect(dangerZone)
