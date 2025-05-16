@@ -1,0 +1,25 @@
+LocalScript(StarterGUI):
+local Players = game.Players.LocalPlayer
+local text = script.Parent
+local coins = Players:WaitForChild("leaderstats"):WaitForChild("Coins")
+
+while true do
+	text.Text = coins.Value
+	task.wait(1)
+end
+
+
+Script(ServerScript):
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder",player)
+	leaderstats.Name = "leaderstats"
+	
+	local coins = Instance.new("IntValue", leaderstats)
+	coins.Name = "Coins"
+	coins.Value = 0
+	
+	while true do
+		coins.Value = coins.Value + 1
+		task.wait(1)
+	end
+end)
