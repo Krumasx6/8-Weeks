@@ -1,0 +1,11 @@
+ScreenGui>TextLabel>LocalScript:
+
+local text = script.Parent
+
+for i = 1, 10 do
+	text.Text = i
+	task.wait(1)
+	if i == 10 then
+		text:Destroy()
+	end
+end
