@@ -1,0 +1,5 @@
+script.Parent.ClickDetector.MouseClick:Connect(function(otherPart)
+
+	script.Parent.Color = Color3.new((math.random()), (math.random()), (math.random()))
+
+end)
