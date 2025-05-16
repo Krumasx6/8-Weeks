@@ -1,0 +1,10 @@
+Part>Script:
+
+script.Parent.Touched:Connect(function(hit)
+	local hum = hit.Parent:FindFirstChild("Humanoid")
+	if hum then
+		hum.WalkSpeed = 50
+		wait(5)
+		hum.WalkSpeed = 16
+	end
+end)
