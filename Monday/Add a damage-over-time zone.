@@ -1,0 +1,7 @@
+Part>Script:
+script.Parent.Touched:Connect(function(otherPart)
+	local hum = otherPart.Parent:FindFirstChild("Humanoid")
+	if hum then
+		hum.Health = hum.Health - 1
+	end
+end)
