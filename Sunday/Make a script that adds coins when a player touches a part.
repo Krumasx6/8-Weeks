@@ -1,0 +1,20 @@
+ServerScript:
+
+game.Players.PlayerAdded:Connect(function(player)
+	local leaderstats = Instance.new("Folder",player)
+	leaderstats.Name = "leaderstats"
+	
+	local coins = Instance.new("IntValue", leaderstats)
+	coins.Name = "Coins"
+	coins.Value = 0
+	
+end)
+
+
+PartScript:
+
+local Players = game:GetService("Players")
+script.Parent.Touched:Connect(function(hit)
+	local player = Players:GetPlayerFromCharacter(hit.Parent)
+	player:WaitForChild("leaderstats"):WaitForChild("Coins").Value = 	player:WaitForChild("leaderstats"):WaitForChild("Coins").Value + 5
+end)
